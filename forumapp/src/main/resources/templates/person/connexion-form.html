@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login-form</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
+</head>
+
+<body>
+<span th:replace="~{home :: navbarImport}"></span>
+<a th:href="@{/}" class="p-3"><strong>Retour</strong></a>
+
+<form th:action="@{/login}" method="post" th:object="${person}" class="mb-3 p-3">
+    <h1>Connexion à votre espace</h1>
+    <div >
+        <label for="username" class="form-label">Identifiant</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Saisissez votre identifiant">
+    </div>
+    <div >
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Saisissez votre mot de passe">
+    </div>
+    <a th:href="@{/register}"><i>Vous n'avez pas encore de compte individuel</i></a>
+    <br>
+    <br>
+    <button class="btn btn-primary">Je me connecte</button>
+</form>
+
+</body>
+</html>

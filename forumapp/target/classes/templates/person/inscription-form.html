@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription Form</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
+</head>
+<body>
+
+<span th:replace="~{home :: navbarImport}"></span>
+
+<a th:href="@{/}" class="p-3"><strong>Retour</strong></a>
+
+<form th:action="@{/register}" method="post" th:object="${person}" class="mb-3 p-3">
+    <h1>Formulaire d'inscription</h1>
+    <div >
+        <label for="username" class="form-label">Identifiant</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Saisissez un identifiant" th:field="*{username}">
+    </div>
+    <div >
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Saisissez un mot de passe" th:field="*{password}">
+    </div>
+    <br>
+    <button class="btn btn-primary">S'inscrire</button>
+</form>
+
+
+</body>
+</html>

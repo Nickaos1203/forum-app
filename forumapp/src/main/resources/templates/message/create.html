@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create message form</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
+</head>
+<body>
+<span th:replace="~{home :: navbar}"></span>
+
+<a th:href="@{/messages}" class="p-3"><strong>Retour</strong></a>
+
+
+<form th:action="@{/messages/add}" method="post" th:object="${message}" class="mb-3 p-3">
+    <h1>Publier un message</h1>
+    <div >
+        <label for="title" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Ajoutez un titre à votre message">
+    </div>
+
+    <div >
+        <label for="content" class="form-label">Message</label>
+        <textarea class="form-control" id="content" name="content" placeholder="Rédigez votre message"></textarea>
+    </div>
+
+    <br>
+    <button class="btn btn-primary">Publier</button>
+</form>
+
+
+</body>
+</html>
