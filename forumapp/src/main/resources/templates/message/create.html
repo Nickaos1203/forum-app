@@ -6,23 +6,22 @@
     <span th:replace="~{home :: bootstrapImport}"></span>
 </head>
 <body>
-<span th:replace="~{home :: navbar}"></span>
+<span th:replace="~{home :: navbarImport}"></span>
 
 <a th:href="@{/messages}" class="p-3"><strong>Retour</strong></a>
 
 
 <form th:action="@{/messages/add}" method="post" th:object="${message}" class="mb-3 p-3">
     <h1>Publier un message</h1>
+    <input th:field= "*{id}" type="hidden">
     <div >
         <label for="title" class="form-label">Titre</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Ajoutez un titre à votre message">
+        <input type="text" class="form-control" id="title" placeholder="Ajoutez un titre à votre message" th:field="*{title}">
     </div>
-
     <div >
-        <label for="content" class="form-label">Message</label>
-        <textarea class="form-control" id="content" name="content" placeholder="Rédigez votre message"></textarea>
+        <label for="content" class="form-label">Contenu</label>
+        <input type="text" class="form-control" id="content" placeholder="Ajoutez votre texte" th:field="*{content}">
     </div>
-
     <br>
     <button class="btn btn-primary">Publier</button>
 </form>

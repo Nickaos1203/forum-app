@@ -1,7 +1,9 @@
 package org.example.forumapp.service;
 
 import org.example.forumapp.dao.MessageRepository;
+import org.example.forumapp.dao.PersonRepository;
 import org.example.forumapp.entity.Message;
+import org.example.forumapp.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,9 @@ import java.util.List;
 
 @Service
 public class MessageService {
-    @Autowired
-    private MessageRepository messageRepository;
+    private final MessageRepository messageRepository;
 
-    public MessageService(MessageRepository messageRepository) {
+    public MessageService(MessageRepository messageRepository, PersonRepository personRepository) {
         this.messageRepository = messageRepository;
     }
 
@@ -23,10 +24,6 @@ public class MessageService {
 
     public Message findById(Long id) {
         return messageRepository.findById(id).orElse(null);
-    }
-
-    public Message save(Message message) {
-        return messageRepository.save(message);
     }
 
     public Message createMessage(Message message) {

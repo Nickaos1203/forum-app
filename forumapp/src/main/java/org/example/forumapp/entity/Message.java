@@ -22,6 +22,9 @@ public class Message {
     private Date date;
     private String content;
 
-    @OneToMany
+    @OneToMany(mappedBy = "message")
     private List<Comment> comments = new ArrayList<>();
+
+    @ManyToOne
+    private Person person;
 }

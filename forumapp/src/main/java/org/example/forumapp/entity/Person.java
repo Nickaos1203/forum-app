@@ -19,9 +19,10 @@ public class Person {
     private Long id;
     private String username;
     private String password;
-    @OneToMany
+
+    @OneToMany(mappedBy = "person")
     private List<Message> messages = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "person")
     private List<Comment> comments = new ArrayList<>();
 }

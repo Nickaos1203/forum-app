@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>detail message</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
+</head>
+<body>
+<span th:replace="~{home :: navbarImport}"></span>
+
+<h1>Détail du message</h1>
+
+<h2>TITRE: <span th:text="${message.getTitle()}"></span></h2>
+<p>Date: <span th:text="${message.getDate()}"></span></p>
+<p>Contenu: <span th:text="${message.getContent()}"></span></p>
+<p>Rédigé par: <span th:text="${person.getUsername()}"></span></p>
+
+</body>
+</html>

@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>list message</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
 </head>
 <body>
+<span th:replace="~{home :: navbarImport}"></span>
 <h1>Liste des messages</h1>
+
+<a th:href="@{/messages/new}" class="btn btn-primary">Publier un message</a>
+
+<div th:each="message : ${messages}" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Title; <span th:text="${message.getTitle()}"></span></h5>
+        <p class="card-text">Date: <span th:text="${message.getDate()}"></span></p>
+        <a th:href="@{/messages/{id}(id=${message.getId()})}" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
 
 </body>
 </html>

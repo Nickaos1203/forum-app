@@ -22,10 +22,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" th:href="@{/login}">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/messages}">Voir les messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/messages/new}">Publier un message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/logout}">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +46,7 @@
     <h1>Bienvenue sur FORUM NATION</h1>
         <p>La plateforme pour vous exprimez sur tout et n'importe quoi...</p>
         <p>Inscrivez-vous sans plus tarder</p>
-    <a class="btn btn-primary" th:href="@{/register}">Je m'inscris</a>
+    <a class="btn btn-primary" th:href="@{/register}">Inscription</a>
 </div>
 
 

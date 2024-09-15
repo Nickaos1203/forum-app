@@ -23,9 +23,12 @@ public class PersonService {
 
     public boolean login (String username, String password) {
         Person person = personRepository.findByUsername(username);
+        if (person == null) {
+            return false;
+        }
         if (person.getPassword().equals(password)) {
             httpSession.setAttribute("username", person.getUsername());
-            httpSession.setAttribute("login", "ok");
+            httpSession.setAttribute("login", "OK");
             return true;
         }
         return false;
@@ -34,7 +37,7 @@ public class PersonService {
     public boolean isLogged() {
         try {
             String isLogged = httpSession.getAttribute("login").toString();
-            return isLogged.equals("ok");
+            return isLogged.equals("OK");
         } catch (Exception e) {
             return false;
         }
